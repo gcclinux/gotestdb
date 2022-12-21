@@ -1,0 +1,7 @@
+{
+    "Host": ["odroid"],
+    "Port": ["5432"],
+    "User": ["TestUser"],
+    "Pass": ["TestUser"],
+    "DB": ["TestDB"]
+}

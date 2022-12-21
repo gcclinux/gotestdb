@@ -1,0 +1,59 @@
+### Details HOW-TO create an USER in PostgreSQL
+
+-- Role: "TestUser"
+-- DROP ROLE IF EXISTS "TestUser";
+
+CREATE ROLE "TestUser" WITH
+  LOGIN
+  SUPERUSER
+  INHERIT
+  CREATEDB
+  CREATEROLE
+  NOREPLICATION
+  ENCRYPTED PASSWORD 'md5110a3810a893ddf1efe4931edb54d163';
+
+### Details HOW-TO create a DB in PostgreSQL
+-- Database: TestDB 
+-- DROP DATABASE IF EXISTS "TestDB";
+
+CREATE DATABASE "TestDB"
+    WITH
+    OWNER = "TestUser"
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'en_GB.UTF-8'
+    LC_CTYPE = 'en_GB.UTF-8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+COMMENT ON DATABASE "TestDB" IS 'Golang Test DB';
+
+### Details HOW-TO create a TABLE in PostgreSQL
+
+-- Table: public.testtable
+-- DROP TABLE IF EXISTS public.testtable;
+
+CREATE TABLE IF NOT EXISTS public.testtable
+(
+    user_id SERIAL PRIMARY KEY,
+    firstname character varying(48) NOT NULL,
+    surename character varying(48) NOT NULL,
+    age integer NOT NULL,
+    CONSTRAINT testtable_pkey PRIMARY KEY (user_id),
+    CONSTRAINT testtable_firstname_key UNIQUE (firstname)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.testtable OWNER to TestUser;
+
+### Details HOW-TO insert DATA in TABLE in PostgreSQL
+-- Insert: Data
+
+INSERT INTO public.testtable(firstname, surename, age) VALUES 
+('Cyndi','Lauper','69'),
+('Elvis','Presley','87'),
+('Bruce','Springsteen','73'),
+('Billy','Idol','67'),
+('Ozzy','Osbourne','74'),
+('Brandon','Flowers','41')
