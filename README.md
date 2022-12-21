@@ -5,11 +5,11 @@ Simple go program using postgreSQL
 2) Prerequisite GO fully installed and working<br>
 3) notes/postgresql.txt show how to create test database<br>
 4) structure<br>
-<pre>    gotestdb --> main.go<br>
-<pre>    gotestdb --> go.mod<br>
-<pre>    gotestdb --> go.sum<br>
-<pre>    gotestdb --> conf --> conf.json<br>
-<pre>    gotestdb --> conf --> getconf.go<br>
-<pre>    gotestdb --> conn --> db.go<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> main.go<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> go.mod<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> go.sum<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> conf --> conf.json<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> conf --> getconf.go<br>
+&nbsp;&nbsp;&nbsp;gotestdb --> conn --> db.go<br>
 5) donwload mods --> go mod tidy<br>
 6) run gotestdb --> go run main.go<br>
