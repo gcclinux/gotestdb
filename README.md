@@ -13,3 +13,7 @@ Simple go program using postgreSQL
 &nbsp;&nbsp;&nbsp;gotestdb --> conn --> db.go<br>
 5) donwload mods --> go mod tidy<br>
 6) run gotestdb --> go run main.go<br>
+
+Output Example<br><br>
+
+![alt text](notes/output.png)
