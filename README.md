@@ -18,7 +18,8 @@ Simple go program using postgreSQL
 5) donwload mods --> go mod tidy<br>
 6) run gotestdb --> go run main.go<br>
 <br>
-```go
+
+```
 package main
 
 import "testdb/proc"
