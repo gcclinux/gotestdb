@@ -3,14 +3,13 @@ package conn
 import (
 	"database/sql"
 	"fmt"
-	"testdb/conf"
 
 	_ "github.com/lib/pq"
 )
 
 func ConnectDB() *sql.DB {
 
-	Host, Port, User, Pass, DB := conf.Getconf()
+	Host, Port, User, Pass, DB := Getconf()
 
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		Host, Port, User, Pass, DB)
